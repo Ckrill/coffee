@@ -1,0 +1,47 @@
+.beverages {
+	background: #C0F0CF url("../img/noise.png") repeat;
+	position: relative;
+	color: #FF9064;
+	list-style: none;
+	padding: 30px 50px 50px 50px;
+	// margin: -1px 0; /* Rette bug i iOS */
+	// padding: 59% 2em; /* Temporary deactivated*/
+	
+	text-shadow: 1px 1px 0 #D9D9B4, -1px -1px 0 #D9D9B4, 3px 3px 0 #005057;
+
+	&__beverage {
+		font-size: 3em;
+		line-height: 1.2em;
+		z-index: 1;
+		cursor: pointer;
+		padding: 10px 0;
+		margin: 20px 0;
+		text-align: center;
+		border-radius: 5px;
+
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		transform: translateY(0);
+		opacity: 1;
+		transition: transform .3s,
+		opacity .3s;
+
+		&.animate-in {
+			transform: translateY(50px);
+			opacity: 0;
+		}
+
+		&:hover,
+		&.selected {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+	}
+	/*.beverages li:active,
+	.beverages li:focus,
+	.beverages li:target {
+
+	}*/
+}

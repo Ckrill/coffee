@@ -1,0 +1,293 @@
+{
+  "beverages": {
+    "cafe-au-lait": {
+      "title": "Café au lait",
+      "name": "cafe-au-lait",
+      "recipe": {
+        "1": {
+          "title": "Coffee",
+          "name": "coffee",
+          "parts": "1 part",
+          "percentage": "50",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "1 part",
+          "percentage": "50",
+          "order": "2"
+        }
+      }
+    },
+    "cafe-mocha": {
+      "title": "Café Mocha",
+      "name": "cafe-mocha",
+      "recipe": {
+        "1": {
+          "title": "Chocolate Syrup",
+          "name": "chocolate-syrup",
+          "parts": "a squirt of",
+          "percentage": "10",
+          "order": "1"
+        },
+        "2": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "30",
+          "order": "2"
+        },
+        "3": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "2 parts",
+          "percentage": "60",
+          "order": "3"
+        }
+      }
+    },
+    "caffe-americano": {
+      "title": "Caffè Americano",
+      "name": "caffe-americano",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "20",
+          "order": "1"
+        },
+        "2": {
+          "title": "Water",
+          "name": "water",
+          "parts": "4 parts",
+          "percentage": "80",
+          "order": "2"
+        }
+      }
+    },
+    "caffe-latte": {
+      "title": "Caffè Latte",
+      "name": "caffe-latte",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "34",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "2 parts",
+          "percentage": "66",
+          "order": "2"
+        }
+      }
+    },
+    "caffe-macchiato": {
+      "title": "Caffè Macchiato",
+      "name": "caffe-macchiato",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "90",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "a spurt of",
+          "percentage": "10",
+          "order": "2"
+        }
+      }
+    },
+    "caffe-marocchino": {
+      "title": "Caffè Marocchino",
+      "name": "caffe-marocchino",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "3 parts",
+          "percentage": "70",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk Froth",
+          "name": "milk-froth",
+          "parts": "1 part",
+          "percentage": "20",
+          "order": "2"
+        },
+        "3": {
+          "title": "Cocoa Powder",
+          "name": "cocoa-powder",
+          "parts": "a sprinkle of",
+          "percentage": "10",
+          "order": "3"
+        }
+      }
+    },
+    "cappuccino": {
+      "title": "Cappuccino",
+      "name": "cappuccino",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "30",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "1 part",
+          "percentage": "30",
+          "order": "2"
+        },
+        "3": {
+          "title": "Milk Froth",
+          "name": "milk-froth",
+          "parts": "1 part",
+          "percentage": "30",
+          "order": "3"
+        },
+        "4": {
+          "title": "Cocoa Powder",
+          "name": "cocoa-powder",
+          "parts": "a sprinkle of",
+          "percentage": "10",
+          "order": "4"
+        }
+      }
+    },
+    "cortado": {
+      "title": "Cortado",
+      "name": "cortado",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "50",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "1 part",
+          "percentage": "50",
+          "order": "2"
+        }
+      }
+    },
+    "espresso": {
+      "title": "Espresso",
+      "name": "espresso",
+      "recipe": {
+        "espresso": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "100",
+          "order": "1"
+        }
+      }
+    },
+    "espressino": {
+      "title": "Espressino",
+      "name": "espressino",
+      "recipe": {
+        "1": {
+          "title": "Cocoa Powder",
+          "name": "cocoa-powder",
+          "parts": "a sprinkle of",
+          "percentage": "10",
+          "order": "1"
+        },
+        "2": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "40",
+          "order": "2"
+        },
+        "3": {
+          "title": "Steamed Milk",
+          "name": "steamed-milk",
+          "parts": "1 part",
+          "percentage": "40",
+          "order": "3"
+        },
+        "4": {
+          "title": "Cocoa Powder",
+          "name": "cocoa-powder",
+          "parts": "a sprinkle of",
+          "percentage": "10",
+          "order": "4"
+        }
+      }
+    },
+    "irish-coffee": {
+      "title": "Irish Coffee",
+      "name": "irish-coffee",
+      "recipe": {
+        "1": {
+          "title": "Brown Sugar",
+          "name": "brown-sugar",
+          "parts": "a spoonful of",
+          "percentage": "10",
+          "order": "1"
+        },
+        "2": {
+          "title": "Whiskey",
+          "name": "whiskey",
+          "parts": "1 part",
+          "percentage": "20",
+          "order": "2"
+        },
+        "3": {
+          "title": "Coffee",
+          "name": "coffee",
+          "parts": "2 parts",
+          "percentage": "50",
+          "order": "3"
+        },
+        "4": {
+          "title": "Whipped Cream",
+          "name": "whipped-cream",
+          "parts": "1 part",
+          "percentage": "20",
+          "order": "4"
+        }
+      }
+    },
+    "latte-macchiato": {
+      "title": "Latte Macchiato",
+      "name": "latte-macchiato",
+      "recipe": {
+        "2": {
+          "title": "Milk",
+          "name": "milk",
+          "parts": "a spurt of",
+          "percentage": "10",
+          "order": "1"
+        },
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "90",
+          "order": "2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.footer {
+	background: #412A22 url("../img/noise.png") repeat;
+	width: 100%;
+
+	&__author {
+		font: italic 1.1em/1.5em "Crimson Text",serif;
+		letter-spacing: .05em;
+		word-spacing: .1em;
+		color: #FF9064;
+		padding: 30px;
+		text-align: center;
+		text-decoration: none;
+		display: block;
+		
+		&:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	&__arrow {
+		display: none;
+
+		.footer__author:hover & {
+			display: inline-block;
+		}
+	}
+}

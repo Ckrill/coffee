@@ -1,0 +1,103 @@
+// @import "global/typography";
+// TODO: Add typography.scss? Or at least make sure fonts are loaded correctly
+
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 100%;
+	font: 400 1em/1.5em "Oswald", sans-serif;
+}
+body {
+}
+body > #mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	min-width: 500px;
+}
+#wrapper {
+	background: #412A22 url("../img/noise.png") repeat;
+	position: relative;
+	// width: 200%;
+	width: 100%;
+	height: 100%;
+	
+	-webkit-transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
+	-moz-transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
+	transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
+}
+article, nav {
+	position: relative;
+	width: 50%;
+	float: left;
+	height: 100%;
+}
+nav {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+
+/*@media
+screen and (max-width: 639px) and (orientation: portrait),
+screen and (max-width: 959px) and (orientation: landscape) {
+	html {
+		font-size: 50%;
+	}
+	ul.beverages {
+		text-shadow: 1px 2px 0 #005057;
+	}
+}*/
+// @media
+// screen and (min-width: 640px) and (max-width: 1535px) and (orientation: portrait),
+// screen and (min-width: 960px) and (max-width: 2048px) and (orientation: landscape) {
+// 	html {
+// 		font-size: 100%;
+// 	}
+// }
+// @media
+// screen and (min-width: 1536px) and (orientation: portrait),
+// screen and (min-width: 2049px) and (orientation: landscape) {
+// 	html {
+// 		font-size: 200%;
+// 	}
+// 	ul.beverages {
+// 		text-shadow: 2px 2px 0 #D9D9B4, -2px -2px 0 #D9D9B4, 6px 6px 0 #005057;
+// 	}
+// }
+
+/*@media
+screen and (min-width: 1536px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-width: 1536px) and (orientation: portrait) and (min-resolution: 192dpi),
+screen and (min-width: 2049px) and (orientation: landscape)and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-width: 2049px) and (orientation: landscape)and (min-resolution: 192dpi) {
+	html {
+		font-size: 100%;
+	}
+}*/
+
+
+/*@media 
+(-webkit-max-device-pixel-ratio: 1), 
+(max-resolution: 192dpi) { 
+    html {
+    	font-size: 100%;
+    }
+}*/
+
+
+/*@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    html {
+    	font-size: 50%;
+    }
+}*/
+
+
+

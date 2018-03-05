@@ -1,0 +1,135 @@
+#menu {
+	/*	background: rgba(0, 0, 0, .1);*/
+	background: rgba(255, 255, 255, 0.3);
+	position: absolute;
+	height: 3.75em;
+	width: 3.75em;
+	margin: 1.5em 0 0 1.5em;
+	padding: 0.8125em;
+	z-index: 2;
+	visibility: hidden;
+}
+#menu:hover {
+	background: rgba(0, 0, 0, .1);
+	cursor: pointer;
+}
+#menu .border {
+	background: rgba(0, 0, 0, .1);
+	width: 100%;
+	height: 20%;
+	margin: 0 0 20% 0;
+}
+
+.recipes {
+	background: #C0F0CF url("../img/noise.png") repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.recipe {
+	height: 100%;
+	
+	transition: height .3s;
+
+	&.animate-in {
+		height: 0;
+	}
+
+	&__ingredient {
+		overflow: hidden;
+		height: 0%;
+		position: relative;
+		
+		-webkit-transition: height .4s ease-in-out 0s;
+		-moz-transition: height .4s ease-in-out 0s;
+		transition: height .4s ease-in-out 0s;
+	
+		.fill {
+			height: 100%;
+			background: url('../img/noise.png') repeat left top;
+		}
+		
+		&--espresso .fill {
+			background-color: #412A22;
+		}
+		&--water .fill {
+			background-color: #92CDCF;
+		}
+		&--milk .fill,
+		&--steamed-milk .fill {
+			background-color: #EEEFF7;
+		}
+		&--cream .fill,
+		&--whipped-cream .fill {
+			background-color: #F2E6B6;
+		}
+		&--coffee .fill {
+			background-color: #301b14;
+		}
+		&--milk-froth .fill {
+			background-color: #F9FAFF;
+		}
+		&--cocoa-powder .fill {
+			background-color: #59382e;
+		}
+		&--chocolate-syrup .fill {
+			background-color: #361e16;
+		}
+		&--brown-sugar .fill {
+			background-color: #45261c;
+		}
+		&--whiskey .fill {
+			background-color: #994800;
+		}
+	}
+
+	&__ingredient-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	/*	width: 0;*/
+		height: 0;
+		
+		font: 400 2em/1.5em "Oswald", Arial, Helvetica, Geneva, sans-serif;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		text-align: center;
+		line-height: 0em;
+		white-space: nowrap;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+	}
+
+	&__amount {
+		font-size: .5em;
+	}
+}
+
+.milk .ingredientText,
+.milkFroth .ingredientText,
+.steamedMilk .ingredientText {
+	color: #412A22;
+}
+
+@media only screen and (orientation:portrait), screen and (max-width: 1000px) {
+/*	#wrapper {
+		width: 200%;
+	}*/
+	#menu {
+		visibility: visible;
+	}
+}
+@media only screen and (max-width: 500px) {
+	ul.beverages {
+		padding: 25px;
+	}
+}

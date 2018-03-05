@@ -1,0 +1,44 @@
+.header {
+	background: #C0F0CF url("../img/noise.png") repeat;
+	padding: 50px 0 0 0;
+	text-align: center;
+
+	&__logo {
+		display: block;
+		margin: 0 auto;
+		width: 40%;
+		padding: 40px 0;
+	}
+
+	&__logoSub {
+		font: italic 1.2em/1.5em "Crimson Text", serif;
+		letter-spacing: .04em;
+		word-spacing: .1em;
+		color: #412A22;
+		padding: 0 20px 20px 20px;
+		text-align: center;
+	}
+	
+	&__divider {
+		width: 60%;
+		margin: 0 auto;
+		color: #FF9064;
+		border-style: none;
+		border-top: 0.125rem solid #FF9064;
+		border-bottom: 0.125rem solid #005057;
+	}
+
+	&__arrow{
+		color: #FF9064;
+		text-shadow: 2px 2px 0 #005057;
+		display: inline-block;
+		position: relative;
+		top: -0.7em;
+		font-size: 2em;
+		padding: 0 0.5em;
+		background: #C0F0CF url("../img/noise.png") repeat;
+		width: 1em;
+		line-height: 1em;
+		cursor: pointer;
+	}
+}
