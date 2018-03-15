@@ -1,13 +1,12 @@
 .beverages {
+	color: #FF9064;
+	text-shadow: 1px 1px 0 #D9D9B4,
+							 -1px -1px 0 #D9D9B4,
+							 3px 3px 0 #005057;
 	background: #C0F0CF url("../img/noise.png") repeat;
 	position: relative;
-	color: #FF9064;
-	list-style: none;
 	padding: 30px 50px 50px 50px;
-	// margin: -1px 0; /* Rette bug i iOS */
-	// padding: 59% 2em; /* Temporary deactivated*/
-	
-	text-shadow: 1px 1px 0 #D9D9B4, -1px -1px 0 #D9D9B4, 3px 3px 0 #005057;
+	list-style: none;
 
 	&__beverage {
 		font-size: 3em;
@@ -26,8 +25,14 @@
 
 		transform: translateY(0);
 		opacity: 1;
-		transition: transform .3s,
-		opacity .3s;
+
+		-webkit-transition: transform $fast $animation-curve,
+												opacity $fast $animation-curve;
+		-moz-transition: transform $fast $animation-curve,
+										opacity $fast $animation-curve;
+		transition: transform $fast $animation-curve,
+								opacity $fast $animation-curve;
+								
 
 		&.animate-in {
 			transform: translateY(50px);
@@ -39,9 +44,4 @@
 			background-color: rgba(0, 0, 0, 0.05);
 		}
 	}
-	/*.beverages li:active,
-	.beverages li:focus,
-	.beverages li:target {
-
-	}*/
 }

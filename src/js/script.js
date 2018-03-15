@@ -92,6 +92,29 @@ var functions = {
 		}
 	},
 
+	debounce: function (func, wait, immediate) {
+		var timeout;
+		return function (e) {
+				var context = this,
+						args = arguments;
+	
+				var later = function () {
+						timeout = null;
+						if (!immediate) func.apply(context, args);
+				};
+	
+				var callNow = immediate && !timeout;
+	
+				clearTimeout(timeout);
+	
+				timeout = setTimeout(later, wait);
+	
+				if (callNow) {
+						func.apply(context, args);
+				}
+		};
+	},
+
 	forEach: function (elements, callback) {
 		Array.prototype.forEach.call(elements, callback);
 	},
@@ -151,18 +174,28 @@ var f = functions;
 
 
 
+var settings = {
+	mobileThreshold: 1000
+};
+var coffee = {}; // State
+
+
+
 // Get the data
 var getRecipes = XHRPromise('./beverages.json', 'GET');
 // TODO: Add flat white!
 
-
-function selectBeverage(e) {
-
+function deselectBeverages() {
 	// Remove selected class from all beverages
 	f.removeClass(f.select('.beverages__beverage'), 'selected');
+}
+
+function selectBeverage(beverage) {
+
+	deselectBeverages();
 
 	// Add selected class to selected beverage
-	f.addClass(e.target, 'selected');
+	f.addClass(f.select('[data-beverage="' + beverage + '"]'), 'selected');
 }
 
 function fillCup(recipe) {
@@ -173,7 +206,7 @@ function fillCup(recipe) {
 		for (var key in recipe) {
 			const ingredient = recipe[key];
 			
-			beverage = '<div class="recipe__ingredient recipe__ingredient--' + ingredient.name + '" style="height: ' + ingredient.percentage + '%"><div class="recipe__ingredient-text"><span class="recipe__amount">' + ingredient.parts + '</span> ' + ingredient.title + '</div><div class="fill"></div></div>' + beverage;
+			beverage = '<div class="recipe__ingredient recipe__ingredient--' + ingredient.name + '" style="height: ' + ingredient.percentage + '%"><div class="recipe__ingredient-text"><span class="recipe__amount">' + ingredient.parts + '</span> ' + ingredient.title + '</div></div>' + beverage;
 		}
 
 		e.innerHTML = '<div class="recipe animate-in">' + beverage + '</div>' + e.innerHTML;
@@ -204,7 +237,21 @@ function activateBeverage() {
 	}, 50);
 }
 
-function updateRecipe() {
+function updateBeverageList(e) {
+	const beverages = coffee.recipes.beverages;
+	var listOfBeverages = '';
+	
+	for (var key in beverages) {
+		const beverage = beverages[key];
+		listOfBeverages += '<li class="beverages__beverage animate-in" data-beverage="' + beverage.name + '">' + beverage.title + '</li>';
+	}
+
+	e.innerHTML = listOfBeverages;
+
+	showBeverages();
+}
+
+function showBeverages() {
 	const beverages = f.select('.beverages__beverage');
 
 	var i = 1;
@@ -218,39 +265,70 @@ function updateRecipe() {
 	})(beverages.length);
 }
 
-
-
+function isMobile() {
+	var isMobile = window.innerWidth < settings.mobileThreshold;
+	
+	// Update state
+	coffee.isMobile = isMobile;
+	
+	// Update DOM so that styling can change as well
+	if (isMobile) {
+		f.removeClass(f.select('body'), 'is-desktop');
+		f.addClass(f.select('body'), 'is-mobile');
+	} else {
+		f.removeClass(f.select('body'), 'is-mobile');
+		f.addClass(f.select('body'), 'is-desktop');
+	}
+}
 
 
 // Navigating between pages
 
-function goToRecipe() {
-	// callEach(f.select('#wrapper'), function (e) {
-	// 	e.style.left = '-100%';
-	// });
+function goToRecipe(beverage) {
+	f.addClass(f.select('body'), 'is-showing-recipe'); // TODO: Should this be changed?
+	selectBeverage(beverage);
+	fillCup(coffee.recipes.beverages[beverage].recipe);
+}
+
+function goToBeverages() {
+	f.removeClass(f.select('body'), 'is-showing-recipe'); // TODO: Should this be changed?
 }
 
 
+function updateHistory (beverage) {
+	if (beverage) {
+		var stateObj = { beverage: beverage };
+		history.pushState(stateObj, beverage, '#' + beverage);
+	} else {
+		var stateObj = null;
+		history.pushState(stateObj, null, '/');
+	}
+}
 
+window.onpopstate = function(event) {
+	if (event.state) {
+		const beverage = event.state.beverage;
+		goToRecipe(beverage);
+	} else {
+		goToBeverages();
+	}
+};
 
-window.onload = function () {
+// window.onload = function () {
+f.addEventListener(window, 'load', function () {
+
 	getRecipes.then(function (recipes) {
 		recipes = JSON.parse(recipes);
 
+		// Save recipes to global object
+		coffee.recipes = recipes;
+
+		// Populate menu
 		callEach(f.select('.beverages'), function (e) {
-			const beverages = recipes.beverages;
-			var listOfBeverages = '';
-			
-			for (var key in beverages) {
-				const beverage = beverages[key];
-				listOfBeverages += '<li class="beverages__beverage animate-in" data-beverage="' + beverage.name + '">' + beverage.title + '</li>';
-			}
-
-			e.innerHTML = listOfBeverages;
-
-			updateRecipe();
+			updateBeverageList(e);
 		});
 
+		// Beverage is chosen from the menu
 		f.addEventListener(f.select('.beverages__beverage'), 'click', function (e) {
 			
 			if (!f.hasClass(e.target, 'beverages__beverage')) {
@@ -258,11 +336,33 @@ window.onload = function () {
 				return;
 			}
 			
-			goToRecipe();
 			const beverage = e.target.dataset.beverage;
-			selectBeverage(e);
-			fillCup(recipes.beverages[beverage].recipe);
+			goToRecipe(beverage);
+			updateHistory(beverage);
+
 		}, f.select('.beverages'));
 
+		// Menu button is clicked
+		f.addEventListener(f.select('.menu-icon'), 'click', function (e) {
+			deselectBeverages();
+			updateHistory(null);
+			goToBeverages();
+		});
+
+		// Check for # in url
+		const url = window.location.href;
+		const beverage = url.split('#')[1];
+		if (beverage) {
+			goToRecipe(beverage);
+		} else {
+			goToBeverages();
+		}
 	});
-}
+
+	// Check if mobile
+	f.addEventListener(window, 'resize', f.debounce(function() {
+		isMobile();
+	}, 100));
+
+	isMobile();
+});

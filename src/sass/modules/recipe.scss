@@ -1,24 +1,32 @@
-#menu {
-	/*	background: rgba(0, 0, 0, .1);*/
+.menu-icon {
+	// background: rgba(0, 0, 0, .1);
 	background: rgba(255, 255, 255, 0.3);
 	position: absolute;
-	height: 3.75em;
-	width: 3.75em;
-	margin: 1.5em 0 0 1.5em;
-	padding: 0.8125em;
+	height: 2.5em;
+	width: 2.5em;
+	margin: .5em 0 0 .5em;
+	padding: 0.625em;
 	z-index: 2;
-	visibility: hidden;
+	display: none;
+
+	&:hover {
+		background: rgba(0, 0, 0, .1);
+		cursor: pointer;
+	}
+
+	.is-mobile & {
+		display: block;
+	}
+
+	&__element {
+		background: rgba(0, 0, 0, .1);
+		width: 100%;
+		height: 20%;
+		margin: 0 0 20% 0;
+	}
 }
-#menu:hover {
-	background: rgba(0, 0, 0, .1);
-	cursor: pointer;
-}
-#menu .border {
-	background: rgba(0, 0, 0, .1);
-	width: 100%;
-	height: 20%;
-	margin: 0 0 20% 0;
-}
+
+
 
 .recipes {
 	background: #C0F0CF url("../img/noise.png") repeat;
@@ -35,57 +43,64 @@
 .recipe {
 	height: 100%;
 	
-	transition: height .3s;
+	body:not(.is-mobile) & {
+		-webkit-transition: height $fast $animation-curve;
+		-moz-transition: height $fast $animation-curve;
+		transition: height $fast $animation-curve;
+	}
+	// TODO: Animate on transform instead.
+	// TODO: When animating in, transform: scaleY(0) -> scaleY(100%)
+	// TODO: Maybe don't animate out?
 
 	&.animate-in {
 		height: 0;
 	}
 
 	&__ingredient {
+		background: url('../img/noise.png') repeat left top;
 		overflow: hidden;
 		height: 0%;
 		position: relative;
 		
-		-webkit-transition: height .4s ease-in-out 0s;
-		-moz-transition: height .4s ease-in-out 0s;
-		transition: height .4s ease-in-out 0s;
-	
-		.fill {
-			height: 100%;
-			background: url('../img/noise.png') repeat left top;
-		}
-		
-		&--espresso .fill {
+		&--espresso {
 			background-color: #412A22;
 		}
-		&--water .fill {
+		&--water {
 			background-color: #92CDCF;
 		}
-		&--milk .fill,
-		&--steamed-milk .fill {
+		&--milk,
+		&--steamed-milk {
 			background-color: #EEEFF7;
 		}
-		&--cream .fill,
-		&--whipped-cream .fill {
+		&--cream,
+		&--whipped-cream {
 			background-color: #F2E6B6;
 		}
-		&--coffee .fill {
+		&--coffee {
 			background-color: #301b14;
 		}
-		&--milk-froth .fill {
+		&--milk-froth {
 			background-color: #F9FAFF;
 		}
-		&--cocoa-powder .fill {
+		&--cocoa-powder {
 			background-color: #59382e;
 		}
-		&--chocolate-syrup .fill {
+		&--chocolate-syrup {
 			background-color: #361e16;
 		}
-		&--brown-sugar .fill {
+		&--brown-sugar {
 			background-color: #45261c;
 		}
-		&--whiskey .fill {
+		&--whiskey {
 			background-color: #994800;
+		}
+
+		&--milk,
+		&--milk-froth,
+		&--steamed-milk {
+			.recipe__ingredient-text {
+				color: #412A22;
+			}
 		}
 	}
 
@@ -100,36 +115,16 @@
 		height: 0;
 		
 		font: 400 2em/1.5em "Oswald", Arial, Helvetica, Geneva, sans-serif;
-		color: white;
+		color: #EEEFF7;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		text-align: center;
 		line-height: 0em;
 		white-space: nowrap;
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+		// text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
 	}
 
 	&__amount {
 		font-size: .5em;
-	}
-}
-
-.milk .ingredientText,
-.milkFroth .ingredientText,
-.steamedMilk .ingredientText {
-	color: #412A22;
-}
-
-@media only screen and (orientation:portrait), screen and (max-width: 1000px) {
-/*	#wrapper {
-		width: 200%;
-	}*/
-	#menu {
-		visibility: visible;
-	}
-}
-@media only screen and (max-width: 500px) {
-	ul.beverages {
-		padding: 25px;
 	}
 }

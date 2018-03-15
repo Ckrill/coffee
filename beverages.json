@@ -235,6 +235,26 @@
         }
       }
     },
+    "flat-white": {
+      "title": "Flat White",
+      "name": "flat-white",
+      "recipe": {
+        "1": {
+          "title": "Espresso",
+          "name": "espresso",
+          "parts": "1 part",
+          "percentage": "34",
+          "order": "1"
+        },
+        "2": {
+          "title": "Milk Froth",
+          "name": "milk-froth",
+          "parts": "2 parts",
+          "percentage": "66",
+          "order": "2"
+        }
+      }
+    },
     "irish-coffee": {
       "title": "Irish Coffee",
       "name": "irish-coffee",

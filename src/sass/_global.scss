@@ -1,16 +1,31 @@
 // @import "global/typography";
 // TODO: Add typography.scss? Or at least make sure fonts are loaded correctly
 
+
+// Animations
+$rapid: .1s;
+$fast: .3s;
+$slow: .5s;
+
+$animation-curve: ease-in-out;
+
+
+
+
+
 * {
 	padding: 0;
 	margin: 0;
 }
+
 html {
 	font-size: 100%;
 	font: 400 1em/1.5em "Oswald", sans-serif;
 }
+
 body {
 }
+
 body > #mask {
 	position: absolute;
 	width: 100%;
@@ -18,23 +33,36 @@ body > #mask {
 	overflow: hidden;
 	min-width: 500px;
 }
+
 #wrapper {
 	background: #412A22 url("../img/noise.png") repeat;
 	position: relative;
-	// width: 200%;
-	width: 100%;
+	width: 200%;
 	height: 100%;
 	
-	-webkit-transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
-	-moz-transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
-	transition: width .4s ease-in-out 0s, left .4s ease-in-out 0s;
+	-webkit-transition: width $fast $animation-curve,
+											transform $fast $animation-curve;
+	-moz-transition: width $fast $animation-curve,
+									 transform $fast $animation-curve;
+	transition: width $fast $animation-curve,
+							transform $fast $animation-curve;
+
+	.is-desktop & {
+		width: 100%;
+	}
+	.is-mobile.is-showing-recipe & {
+		transform: translateX(-50%);
+	}
 }
-article, nav {
+
+.cup,
+nav {
 	position: relative;
 	width: 50%;
 	float: left;
 	height: 100%;
 }
+
 nav {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;

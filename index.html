@@ -44,6 +44,11 @@
 		<link href="img/splash-iPad-retina-landscape.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 		
 		<!-- Webapp settings - END -->
+
+		<!-- TODO: App is very small on android. Why is that? Is it also small on iPhone? -->
+		<!-- TODO: Make it look like a nice webapp on android (and iOS), load screen and nice icon -->
+		<!-- TODO: Use this to check favicon https://realfavicongenerator.net/favicon_checker?protocol=http&site=chrisc.dk%2Fworkspace%2Fcoffee -->
+		<!-- TODO: Change the URL and make the menu button do a "history back" event, so that Android users can use the build in back button -->
 		
 	</head>
 	<body>
@@ -53,7 +58,7 @@
 				<nav>
 					<header class="header">
 						<img class="header__logo" src="http://chrisc.dk/workspace/coffee/img/iconHeader.svg" alt="icon" />
-						<p class="header__logoSub">Choose your favorite coffee from below.</p>
+						<p class="header__get-started">Choose your favorite coffee from below.</p>
 						<hr class="header__divider" />
 						<div class="header__arrow" >↓</div>
 					</header>
@@ -75,21 +80,18 @@
 					</ul>
 					
 					<footer class="footer">
-						<a class="footer__author" href="http://chrisc.dk" target="_blank">
-							by Chris Christensen
-							<span class="footer__arrow">&ensp; &rarr;</span>
-						</a>
+						<a class="footer__author" href="http://chrisc.dk" target="_blank">by Chris Christensen</a>
 					</footer>
 				</nav>
 
-				<article class="cup">
-					<div id="menu">
-						<div class="border"></div>
-						<div class="border"></div>
-						<div class="border"></div>
+				<div class="cup">
+					<div class="menu-icon">
+						<div class="menu-icon__element"></div>
+						<div class="menu-icon__element"></div>
+						<div class="menu-icon__element"></div>
 					</div>
 					<div class="recipes"></div>
-				</article>
+				</div>
 			</div>
 		</div>
 
