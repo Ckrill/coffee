@@ -1,16 +1,16 @@
 .beverages {
-	color: #FF9064;
-	text-shadow: 1px 1px 0 #D9D9B4,
-							 -1px -1px 0 #D9D9B4,
-							 3px 3px 0 #005057;
-	background: #C0F0CF url("../img/noise.png") repeat;
+	color: $logo-font-color;
+	text-shadow: 1px 1px 0 $logo-shadow-color,
+							 -1px -1px 0 $logo-shadow-color,
+							 3px 3px 0 $logo-shadow-color-2;
+	background: $background-color url("../img/noise.png") repeat;
 	position: relative;
 	padding: 30px 50px 50px 50px;
 	list-style: none;
 
 	&__beverage {
-		font-size: 3em;
-		line-height: 1.2em;
+		font-size: rem(48px);
+		line-height: rem(58px);
 		z-index: 1;
 		cursor: pointer;
 		padding: 10px 0;

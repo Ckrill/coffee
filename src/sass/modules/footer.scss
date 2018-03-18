@@ -3,10 +3,12 @@
 	width: 100%;
 
 	&__author {
-		font: italic 1.1em/1.5em "Crimson Text",serif;
+		font-family: $secondary-font;
+		font-size: rem(16px);
+		line-height: rem(24px);
 		letter-spacing: .05em;
 		word-spacing: .1em;
-		color: #FF9064;
+		color: $logo-font-color;
 		padding: 30px;
 		text-align: center;
 		text-decoration: none;

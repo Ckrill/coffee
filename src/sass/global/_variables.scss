@@ -5,39 +5,52 @@
 }
 
 @font-face {
-    font-family: roboto;
-    src: url(../font/roboto-light.woff2);
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: roboto;
-    src: url(../font/roboto-regular.woff2);
+    font-family: "Crimson Text";
+    src: url(../font/crimsontext-italic.woff2);
     font-weight: 400;
 }
 
 // Colors
-$BgColor: #f5f5f5;
-$fontColor: #424242; // Basic font color
-$fontShadowColorLight: rgba(0, 0, 0, .1);
-$fontShadowColorDark: rgba(0, 0, 0, .2);
+$color-white-1: #F9FAFF;
+$color-white-2: #EEEFF7;
+$color-white-3: #F2E6B6;
+$color-white-4: #D9D9B4;
+
+$color-green-1: #C0F0CF;
+
+$color-blue-1: #92CDCF;
+$color-blue-2: #005057;
+
+$color-orange-1: #FF9064;
+
+$color-brown-1: #994800;
+$color-brown-2: #59382e;
+$color-brown-3: #45261c;
+$color-brown-4: #412A22;
+$color-brown-5: #361e16;
+$color-brown-6: #301b14;
+
+
+
+$background-color: $color-green-1;
+$logo-font-color: $color-orange-1;
+$logo-shadow-color: $color-white-4;
+$logo-shadow-color-2: $color-blue-2;
+
+$font-dark-color: $color-brown-4;
+$font-light-color: $color-white-2;
 
 //Font
-$fontStack: "roboto", Arial, Helvetica, Geneva, sans-serif;
-$fontStackHeading: "oswald", Arial, Helvetica, Geneva, sans-serif;
+$primary-font: "Oswald", Arial, Helvetica, Geneva, sans-serif;
+$secondary-font: "Crimson Text", serif;
 $base-font-size: 16px;
 
-// Animations
+// // Animations
+$rapid: .1s;
 $fast: .3s;
 $slow: .5s;
-$curve: cubic-bezier(.23,1,.32,1);
-
-//Media Queries
-$desktop: 1200px;
-$tabletH: 1024px;
-$tabletV: 1023px;
-$mobileH: 767px;
-$mobileV: 480px;
+// $curve: cubic-bezier(.23,1,.32,1);
+$animation-curve: ease-in-out;
 
 // Functions
 @function rem($size) {

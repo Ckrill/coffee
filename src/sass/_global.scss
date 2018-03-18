@@ -1,29 +1,17 @@
-// @import "global/typography";
-// TODO: Add typography.scss? Or at least make sure fonts are loaded correctly
-
-
-// Animations
-$rapid: .1s;
-$fast: .3s;
-$slow: .5s;
-
-$animation-curve: ease-in-out;
-
-
-
-
-
 * {
 	padding: 0;
 	margin: 0;
 }
 
 html {
-	font-size: 100%;
-	font: 400 1em/1.5em "Oswald", sans-serif;
+	font-family: $primary-font;
+	font-size: $base-font-size;
+	line-height: rem(24px);
 }
 
 body {
+	// background: #412A22 url("../img/noise.png") repeat;
+	background: $background-color url("../img/noise.png") repeat;
 }
 
 body > #mask {
@@ -35,7 +23,8 @@ body > #mask {
 }
 
 #wrapper {
-	background: #412A22 url("../img/noise.png") repeat;
+	// background: #412A22 url("../img/noise.png") repeat;
+	background: $background-color url("../img/noise.png") repeat;
 	position: relative;
 	width: 200%;
 	height: 100%;
@@ -51,7 +40,8 @@ body > #mask {
 		width: 100%;
 	}
 	.is-mobile.is-showing-recipe & {
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
+		transform: translateX(-49.99%); // Fixes bug on iPhone where there would be an overaly with a solid color while it animates
 	}
 }
 
@@ -67,37 +57,6 @@ nav {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
-
-
-
-
-/*@media
-screen and (max-width: 639px) and (orientation: portrait),
-screen and (max-width: 959px) and (orientation: landscape) {
-	html {
-		font-size: 50%;
-	}
-	ul.beverages {
-		text-shadow: 1px 2px 0 #005057;
-	}
-}*/
-// @media
-// screen and (min-width: 640px) and (max-width: 1535px) and (orientation: portrait),
-// screen and (min-width: 960px) and (max-width: 2048px) and (orientation: landscape) {
-// 	html {
-// 		font-size: 100%;
-// 	}
-// }
-// @media
-// screen and (min-width: 1536px) and (orientation: portrait),
-// screen and (min-width: 2049px) and (orientation: landscape) {
-// 	html {
-// 		font-size: 200%;
-// 	}
-// 	ul.beverages {
-// 		text-shadow: 2px 2px 0 #D9D9B4, -2px -2px 0 #D9D9B4, 6px 6px 0 #005057;
-// 	}
-// }
 
 /*@media
 screen and (min-width: 1536px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
