@@ -26,15 +26,15 @@
 		margin: 0 auto;
 		color: $logo-font-color;
 		border-style: none;
-		border-top: 0.125rem solid $logo-font-color;
-		border-bottom: 0.125rem solid $logo-shadow-color-2;
+		border-top: 2px solid $logo-font-color;
+		border-bottom: 2px solid $logo-shadow-color-2;
 	}
 
 	&__arrow{
 		font-size: rem(32px);
 		line-height: rem(32px);
 		color: $logo-font-color;
-		text-shadow: 2px 2px 0 $logo-shadow-color-2;
+		text-shadow: 1px 1px 0 $logo-shadow-color-2;
 		display: inline-block;
 		position: relative;
 		top: -0.7em;

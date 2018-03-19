@@ -1,5 +1,5 @@
 .footer {
-	background: #412A22 url("../img/noise.png") repeat;
+	// background: #412A22 url("../img/noise.png") repeat;
 	width: 100%;
 
 	&__author {
@@ -8,14 +8,16 @@
 		line-height: rem(24px);
 		letter-spacing: .05em;
 		word-spacing: .1em;
-		color: $logo-font-color;
-		padding: 30px;
+		// color: $font-dark-color;
+		color: rgba($font-dark-color, .3);
+		padding: 10px;
 		text-align: center;
 		text-decoration: none;
 		display: block;
 		
 		&:hover {
-			background: rgba(0, 0, 0, 0.1);
+			// background: rgba(0, 0, 0, 0.1);
+			color: $font-dark-color;
 		}
 	}
 }

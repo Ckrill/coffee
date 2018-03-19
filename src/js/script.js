@@ -280,7 +280,8 @@ function isMobile() {
 		f.addClass(f.select('body'), 'is-desktop');
 	}
 }
-
+// alert(window.innerWidth);
+// alert(window.innerHeight);
 
 // Navigating between pages
 
@@ -310,6 +311,7 @@ window.onpopstate = function(event) {
 		const beverage = event.state.beverage;
 		goToRecipe(beverage);
 	} else {
+		deselectBeverages();
 		goToBeverages();
 	}
 };
@@ -355,6 +357,7 @@ f.addEventListener(window, 'load', function () {
 		if (beverage) {
 			goToRecipe(beverage);
 		} else {
+			deselectBeverages();
 			goToBeverages();
 		}
 	});

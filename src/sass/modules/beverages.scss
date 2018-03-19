@@ -1,20 +1,24 @@
 .beverages {
-	color: $logo-font-color;
-	text-shadow: 1px 1px 0 $logo-shadow-color,
-							 -1px -1px 0 $logo-shadow-color,
-							 3px 3px 0 $logo-shadow-color-2;
 	background: $background-color url("../img/noise.png") repeat;
 	position: relative;
-	padding: 30px 50px 50px 50px;
+	padding: 0 50px 50px 50px;
 	list-style: none;
 
 	&__beverage {
 		font-size: rem(48px);
-		line-height: rem(58px);
+		line-height: rem(50px);
+		color: $logo-font-color;
+		text-shadow: 1px 1px 0 $logo-shadow-color,
+								 1px -1px 0 $logo-shadow-color,
+								 -1px 1px 0 $logo-shadow-color,
+								 -1px -1px 0 $logo-shadow-color,
+								 2px 2px 0 $logo-shadow-color-2,
+								 3px 3px 0 $logo-shadow-color-2;
+
 		z-index: 1;
 		cursor: pointer;
 		padding: 10px 0;
-		margin: 20px 0;
+		margin: 10px 0;
 		text-align: center;
 		border-radius: 5px;
 
@@ -41,7 +45,15 @@
 
 		&:hover,
 		&.selected {
-			background-color: rgba(0, 0, 0, 0.05);
+			background-color: rgba(0, 0, 0, 0.03);
+
+			// text-shadow: 1px 1px 0 $logo-shadow-color,
+			// 						 1px -1px 0 $logo-shadow-color,
+			// 						 -1px 1px 0 $logo-shadow-color,
+			// 						 -1px -1px 0 $logo-shadow-color,
+			// 						 2px 2px 0 $logo-shadow-color-2,
+			// 						 3px 3px 0 $logo-shadow-color-2,
+			// 						 4px 4px 0 $logo-shadow-color-2;
 		}
 	}
 }
