@@ -1,0 +1,19 @@
+{
+    "name": "Coffee",
+    "short_name": "Coffee",
+    "icons": [
+        {
+            "src": "http://coffee.chrisc.dk/img/android-chrome-192x192.png?v=dLmrxz9Jwe",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "http://coffee.chrisc.dk/img/android-chrome-512x512.png?v=dLmrxz9Jwe",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#c0f0cf",
+    "background_color": "#c0f0cf",
+    "display": "standalone"
+}

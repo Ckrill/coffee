@@ -21,29 +21,24 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> --><!-- TODO: Test this on iPhone -->
 		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
-		<!-- <meta name="viewport" content="width=device-width, initial-scale = .5, user-scalable = no" /> -->
 		
-		<link href="img/icon.png" rel="apple-touch-icon-precomposed" />
-		
-		<!-- iPhone (Retina) SPLASHSCREEN-->
-		<link href="img/splash-iPhone-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		<!-- iPhone (retina, tall) SPLASHSCREEN-->
-		<link href="img/splash-iPhone-retina.png" media="(device-width: 320px) and (device-height: 548px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		<!-- iPad (portrait) SPLASHSCREEN-->
-		<link href="img/splash-iPad-portrait.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
-		<!-- iPad (landscape) SPLASHSCREEN-->
-		<link href="img/splash-iPad-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
-		<!-- iPad (Retina, portrait) SPLASHSCREEN-->
-		<link href="img/splash-iPad-retina-portrait.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		<!-- iPad (Retina, landscape) SPLASHSCREEN-->
-		<link href="img/splash-iPad-retina-landscape.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-		
+		<link rel="apple-touch-icon" sizes="180x180" href="http://coffee.chrisc.dk/img/apple-touch-icon.png?v=dLmrxz9Jwe">
+		<link rel="icon" type="image/png" sizes="32x32" href="http://coffee.chrisc.dk/img/favicon-32x32.png?v=dLmrxz9Jwe">
+		<link rel="icon" type="image/png" sizes="194x194" href="http://coffee.chrisc.dk/img/favicon-194x194.png?v=dLmrxz9Jwe">
+		<link rel="icon" type="image/png" sizes="192x192" href="http://coffee.chrisc.dk/img/android-chrome-192x192.png?v=dLmrxz9Jwe">
+		<link rel="icon" type="image/png" sizes="16x16" href="http://coffee.chrisc.dk/img/favicon-16x16.png?v=dLmrxz9Jwe">
+		<link rel="manifest" href="http://coffee.chrisc.dk/img/site.webmanifest?v=dLmrxz9Jwe">
+		<link rel="mask-icon" href="http://coffee.chrisc.dk/img/safari-pinned-tab.svg?v=dLmrxz9Jwe" color="#c0f0cf">
+		<link rel="shortcut icon" href="http://coffee.chrisc.dk/img/favicon.ico?v=dLmrxz9Jwe">
+		<meta name="msapplication-TileColor" content="#c0f0cf">
+		<meta name="msapplication-config" content="http://coffee.chrisc.dk/img/browserconfig.xml?v=dLmrxz9Jwe">
+		<meta name="theme-color" content="#c0f0cf">
+		<!-- Use this to check favicon https://realfavicongenerator.net/favicon_checker?protocol=http&site=chrisc.dk%2Fworkspace%2Fcoffee -->
 		<!-- Webapp settings - END -->
 
 		<!-- TODO: Font is very small on android. Why is that? Is it also small on iPhone? -->
-			<!-- TODO: Should I make font size media query on pixel ratio? -->
+			<!-- TODO: Should I make font size media query on pixel ratio? https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio -->
 		<!-- TODO: Make it look like a nice webapp on android (and iOS), load screen and nice icon -->
-			<!-- TODO: Use this to check favicon https://realfavicongenerator.net/favicon_checker?protocol=http&site=chrisc.dk%2Fworkspace%2Fcoffee -->
 		<!-- TODO: Make the footer look better, probably not brown -->
 		<!-- TODO: Swipe left to go back to menu? -->
 		
@@ -54,7 +49,7 @@
 			<div id="wrapper">
 				<nav>
 					<header class="header">
-						<img class="header__logo" src="http://chrisc.dk/workspace/coffee/img/iconHeader.svg" alt="icon" />
+						<img class="header__logo" src="http://coffee.chrisc.dk/img/logo.svg" alt="Coffee logo" />
 						<p class="header__get-started">Choose your favorite coffee from below.</p>
 						<hr class="header__divider" />
 						<div class="header__arrow" >↓</div>
